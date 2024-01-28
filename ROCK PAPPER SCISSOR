@@ -1,0 +1,190 @@
+class cat:
+    def __init__(self):
+        self.item=[]
+    
+h=cat()
+
+def addd():
+        
+        
+            s=input('enter a item:')
+            
+                
+                
+            if s=='mobile':
+                a=int(input('enter a qty:'))
+                if a<=s1.qty:      
+                   print('adding successfully')
+
+                   s1.qty-=a
+                   summ=0
+                   prices=s1.price
+                   summ+=prices
+                   m1=(s,a,prices)
+                
+                   
+                   h.item.append(m1)
+                   
+                   print('----------------------------')
+                   s1.cart()
+                   
+                else:
+                   print(f'sorry,only  {s1.qty}  left') 
+            elif s=='tv':
+                a=int(input('enter a qty:'))
+                if a<=s2.qty:      
+                   print('adding successfully')
+                   s2.qty-=a
+                   prices=s2.price
+                   m1=(s,a,prices)
+                   h.item.append(m1)
+                   print('----------------------------')
+                   s1.cart()
+                   
+                else:
+                   print(f'sorry,only  {s2.qty}  left') 
+            elif s=='laptop':
+                a=int(input('enter a qty:'))
+                if a<=s3.qty:      
+                   print('adding successfully')
+                   s3.qty-=a
+                   prices=s3.price
+                   m1=(s,a,prices)
+                   h.item.append(m1)
+                   print('----------------------------')
+                   s1.cart()
+                else:
+                   print(f'sorry,only  {s3.qty}  left')   
+            else:
+               print('This item is not available')
+               print('------------------------------------------')
+               s1.cart()
+              
+def remove():
+       
+            s=input('enter a item:')
+            if s=='mobile':
+                a=int(input('enter a qty:'))
+                if a<=h.item[0][1]:
+                    
+                    for i in (h.item):
+                        
+                        print('removing successfully')
+                        print('----------------------------')
+                        s1.cart()
+                   
+                       
+                else:
+                   print(f'sorry,only  {h.item[0][1]}  left') 
+            elif s=='tv':
+                a=int(input('enter a qty:'))
+                if a<=h.item[1][1]:
+                    
+                    for i in (h.item):
+                        
+                        print('removing successfully')
+                        print('----------------------------')
+                        s1.cart()
+                         
+                else:
+                   print(f'sorry,only  {h.item[1][1]}  left') 
+            elif s=='laptop':
+               a=int(input('enter a qty:'))
+               if a<=h.item[2][1]:
+                    
+                    for i in (h.item):
+                        
+                        print('removing successfully')
+                        print('----------------------------')
+                        s1.cart()
+               else:
+                   print(f'sorry,only  {h.item[2][1]}  left')   
+            else:
+               print('This item is not available')
+               print('------------------------------------------')
+               s1.cart()
+   
+def detail():
+        
+        
+            print('your details are:')
+            print('Name:Ramya')
+            if len(h.item)==0:
+                print(' your cart is empty')
+            else:
+                 for m1 in (h.item):
+                    print('-----your carts are-------')
+                    print('item  qty  price')
+                    print(m1[0],  m1[1],  m1[2])
+
+                 tqty=s1.calculate()
+                 print('Total=',tqty)
+                
+                
+            print('------------------------------------------') 
+                   
+                
+                
+            s1.cart()
+def xit():
+        
+            print('exit')
+            print('------------------------------------------')
+            s1.cart()             
+                          
+
+               
+class shopping_cart:
+    
+    def __init__(self,product,qty,price):
+        
+        self.product=product
+        self.qty=qty
+        self.price=price
+    def cart(self):
+        print('Enter 1 to display all the products')
+        print('Enter 2 to display your details')
+        print('Enter 3 to add products into the cart')
+        print('Enter 4 to remove products from the cart')
+        print('Enter 5 to exit')
+        n=int(input())
+        while n<=5:
+             if n==1:
+               s1.products()      
+             elif n==2:
+             
+                detail()   
+             elif n==3:
+               
+                addd()
+             elif n==4:
+                
+                remove()
+             elif n==5:
+                
+                xit()
+        print('no')
+           
+    def calculate(self):
+           total=0
+           for i in (h.item):
+               total+=i[2]
+           return total 
+   
+      
+    def products(self):
+       
+        
+           print(s1.product,s1.qty,s1.price)
+           print(s2.product,s2.qty,s2.price)
+           print(s3.product,s3.qty,s3.price)
+           print('------------------------------------------')
+           
+           s1.cart()
+
+s1=shopping_cart('mobile',3,20000)
+s2=shopping_cart('tv',10,24000)
+s3=shopping_cart('laptop',7,3000)
+
+
+s1.cart()
